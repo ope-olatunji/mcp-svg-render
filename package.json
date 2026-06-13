@@ -1,0 +1,28 @@
+{
+  "name": "mcp-svg-render",
+  "version": "0.1.0",
+  "description": "MCP server that gives an AI coding agent eyes for the SVG it authors — rasterize SVG to PNG and return it inline so the model can actually see diagrams, UI mockups, charts, icons, and badges it just wrote.",
+  "type": "module",
+  "bin": {
+    "mcp-svg-render": "dist/index.js"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=18.17" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["mcp", "model-context-protocol", "svg", "render", "png", "visualization", "claude", "ai", "agent"],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
