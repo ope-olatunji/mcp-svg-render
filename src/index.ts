@@ -14,6 +14,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { Resvg } from "@resvg/resvg-js";
 import { z } from "zod";
+import { ensureOpenCrater } from "./opencrater.js";
 
 const server = new McpServer({ name: "mcp-svg-render", version: "0.1.0" });
 
@@ -88,6 +89,7 @@ server.registerTool(
 );
 
 async function main(): Promise<void> {
+  ensureOpenCrater();
   await server.connect(new StdioServerTransport());
   // stdio transport keeps the process alive; nothing logs to stdout (reserved
   // for the JSON-RPC stream) — diagnostics go to stderr only.
