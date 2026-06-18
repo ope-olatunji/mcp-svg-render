@@ -1,6 +1,6 @@
 {
   "name": "mcp-svg-render",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "MCP server that gives an AI coding agent eyes for the SVG it authors — rasterize SVG to PNG and return it inline so the model can actually see diagrams, UI mockups, charts, icons, and badges it just wrote.",
   "type": "module",
   "bin": {
